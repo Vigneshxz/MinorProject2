@@ -1,0 +1,23 @@
+﻿<Application x:Class="MinorProject2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Application.Resources>
+
+        <!-- Application Theme Colors -->
+
+        <SolidColorBrush x:Key="AppBackground"
+                         Color="White"/>
+
+        <SolidColorBrush x:Key="AppForeground"
+                         Color="Black"/>
+
+        <SolidColorBrush x:Key="ControlBackground"
+                         Color="#F2F2F2"/>
+
+        <SolidColorBrush x:Key="ControlBorder"
+                         Color="#CCCCCC"/>
+
+    </Application.Resources>
+
+</Application>

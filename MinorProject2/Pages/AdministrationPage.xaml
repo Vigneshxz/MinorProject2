@@ -1,0 +1,59 @@
+<Page x:Class="MinorProject2.Pages.AdministrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Administration"
+      Background="{DynamicResource AppBackground}"
+      Foreground="{DynamicResource AppForeground}">
+
+    <Grid Margin="30"
+          Background="{DynamicResource AppBackground}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Administration"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"
+                   Foreground="{DynamicResource AppForeground}"/>
+
+        <!-- Description -->
+        <TextBlock Grid.Row="1"
+                   Text="Admin-only management of trainer records."
+                   Margin="0,0,0,20"
+                   Foreground="{DynamicResource AppForeground}"/>
+
+        <!-- Administration Section -->
+        <GroupBox Grid.Row="2"
+                  Header="Trainer Administration"
+                  Background="{DynamicResource ControlBackground}"
+                  Foreground="{DynamicResource AppForeground}"
+                  BorderBrush="{DynamicResource ControlBorder}">
+
+            <StackPanel Margin="15">
+
+                <TextBlock Text="Use the Trainers page to add, update, and delete trainer records."
+                           TextWrapping="Wrap"
+                           Margin="0,0,0,15"
+                           Foreground="{DynamicResource AppForeground}"/>
+
+                <Button Content="Open Trainer Management"
+                        Width="200"
+                        Height="40"
+                        HorizontalAlignment="Left"
+                        Background="{DynamicResource ControlBackground}"
+                        BorderBrush="{DynamicResource ControlBorder}"
+                        Foreground="{DynamicResource AppForeground}"
+                        Click="OpenTrainerManagementButton_Click"/>
+
+            </StackPanel>
+
+        </GroupBox>
+
+    </Grid>
+
+</Page>

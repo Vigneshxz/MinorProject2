@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS MinorProject2DB;
+
+USE MinorProject2DB;
+
+CREATE TABLE IF NOT EXISTS Members (
+    MemberID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Phone VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Memberships (
+    MembershipID INT AUTO_INCREMENT PRIMARY KEY,
+    MemberID INT NOT NULL,
+    MembershipType VARCHAR(30) NOT NULL,
+    StartDate DATE NOT NULL,
+    EndDate DATE NOT NULL,
+    FOREIGN KEY (MemberID) REFERENCES Members(MemberID)
+);
+
+CREATE TABLE IF NOT EXISTS Trainers (
+    TrainerID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Specialty VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS WorkoutPlans (
+    WorkoutPlanID INT AUTO_INCREMENT PRIMARY KEY,
+    MemberID INT NOT NULL,
+    TrainerID INT NOT NULL,
+    WorkoutName VARCHAR(100) NOT NULL,
+    WorkoutDays INT NOT NULL,
+    Goal VARCHAR(50) NOT NULL,
+    FOREIGN KEY (MemberID) REFERENCES Members(MemberID),
+    FOREIGN KEY (TrainerID) REFERENCES Trainers(TrainerID)
+);
+
+CREATE TABLE IF NOT EXISTS Exercises (
+    ExerciseID INT AUTO_INCREMENT PRIMARY KEY,
+    ExerciseName VARCHAR(100) NOT NULL,
+    MuscleGroup VARCHAR(50) NOT NULL,
+    Equipment VARCHAR(50) NOT NULL,
+    Difficulty VARCHAR(30) NOT NULL
+);
